@@ -1,3 +1,4 @@
-.App {
-  text-align: center;
+.chat-button {
+  position: relative;
+  cursor: pointer;
 }
