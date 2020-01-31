@@ -11,7 +11,9 @@ class ChatMessage extends Component {
     render() {
         return (
             <div>
-                <button className="chat-button" onClick={this.changeView}>Begin a Chat</button>
+                <button className="chat-button" onClick={this.changeView}>
+                    Begin a Chat
+                </button>
             </div>
         )
     }
