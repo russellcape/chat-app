@@ -1,14 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
+import ChatMessage from './Components/ChatMessage'
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Chat App</h1>
-      </header>
-    </div>
-  );
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentView: 'ChatMessage'
+    }
+    this.changeView = this.changeView.bind(this);
+  }
+  changeView(view) {
+    this.setState({
+      currentView: view
+    })
+  }
+  render() {
+    let view = '';
+    if (this.state.currentView === 'ChatMessage') {
+      view = <ChatMessage changeView={this.changeView}/>
+    }
+    return (
+      <div className='App'>
+        {view}
+      </div>
+    );
+  }
 }
 
 export default App;
