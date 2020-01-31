@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import ChatMessage from './Components/ChatMessage'
+import SignUp from "./Components/SignUp"
 import './App.css';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentView: 'ChatMessage'
+      currentView: "ChatMessage"
     }
     this.changeView = this.changeView.bind(this);
   }
@@ -17,8 +18,11 @@ class App extends Component {
   }
   render() {
     let view = '';
-    if (this.state.currentView === 'ChatMessage') {
+    if (this.state.currentView === "ChatMessage") {
       view = <ChatMessage changeView={this.changeView}/>
+    } 
+    else if (this.state.currentView === "signup") {
+      view = <SignUp />
     }
     return (
       <div className='App'>
