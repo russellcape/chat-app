@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import ChatMessage from './Components/ChatMessage'
 import SignUp from './Components/SignUp'
-import { default as Chatkit } from '@pusher/chatkit-server';
+// import { default as Chatkit } from '@pusher/chatkit-server';
 
-const chatkit = new Chatkit({
-  instanceLocator: "YOUR INSTANCE LOCATOR",
-  key: "YOUR SECRET KEY"
-})
+// const chatkit = new Chatkit({
+//   instanceLocator: "YOUR INSTANCE LOCATOR",
+//   key: "YOUR SECRET KEY"
+// })
 
 class App extends Component {
   constructor(props) {
@@ -16,33 +16,33 @@ class App extends Component {
       currentId: "",
       currentView: "signup"
     }
-    this.changeView = this.changeView.bind(this);
-    this.createUser = this.createUser.bind(this);
+    // this.changeView = this.changeView.bind(this);
+    // this.createUser = this.createUser.bind(this);
   }
 
-  createUser(username) {
-    chatkit.createUser({
-      id: username,
-      name: username
-    })
-    .then((currentUser) => {
-      this.setState({
-        currentUsername: username,
-        currentId: username,
-        currentView: "chatApp"
-      })
-    }).cathch((error) => {
-      if (error.status === 400) {
-        this.setState({
-          currentUsername: username,
-          currentId: username,
-          currentView: "chatApp"
-        })
-      } else {
-        console.log(error.status);
-      }
-    });
-  }
+  // createUser(username) {
+  //   chatkit.createUser({
+  //     id: username,
+  //     name: username
+  //   })
+  //   .then((currentUser) => {
+  //     this.setState({
+  //       currentUsername: username,
+  //       currentId: username,
+  //       currentView: "chatApp"
+  //     })
+  //   }).cathch((error) => {
+  //     if (error.status === 400) {
+  //       this.setState({
+  //         currentUsername: username,
+  //         currentId: username,
+  //         currentView: "chatApp"
+  //       })
+  //     } else {
+  //       console.log(error.status);
+  //     }
+  //   });
+  // }
 
   changeView(view) {
     this.setState({

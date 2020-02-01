@@ -6,8 +6,8 @@ class SignUp extends Component {
         this.state = {
             username: "",
         }
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        // this.handleChange = this.handleChange.bind(this);
+        // this.handleSubmit = this.handleSubmit.bind(this);
     }
     handleChange(event) {
         this.setState({ username: event.target.value });
